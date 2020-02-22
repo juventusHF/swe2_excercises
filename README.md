@@ -1,2 +1,3 @@
-Excercise project for SWE 2 cource
+###### Excercise project for SWE 2 cource
+
 
