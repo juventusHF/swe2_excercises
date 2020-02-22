@@ -21,8 +21,8 @@ public class MathUtils {
      */
     public double addition(List<Double> numbers) {
         double sum = 0d;
-        for(int i = 0; i < numbers.size(); i++) {
-            sum += numbers.get(i);
+        for(Double num : numbers) {
+            sum += num;
         }
         return sum;
     }
