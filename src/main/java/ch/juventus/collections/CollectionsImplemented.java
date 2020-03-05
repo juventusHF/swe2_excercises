@@ -35,6 +35,7 @@ public class CollectionsImplemented {
         animals.remove("Hund");
         // animals.remove(20); -> java.lang.IndexOutOfBoundsException
         animals.remove("Kuh"); // Nichts passiert, kein Element wird gelöscht
+        animals.forEach(animal -> System.out.println(animal));
         animals.clear();
     }
 
@@ -54,6 +55,7 @@ public class CollectionsImplemented {
         animals.removeFirst();
         animals.removeLast();
         System.out.println(animals);
+        animals.forEach(animal -> System.out.println(animal));
     }
 
     static void hashSet() {
@@ -69,6 +71,7 @@ public class CollectionsImplemented {
         System.out.println(people.contains(peter));
         people.remove(peter);
         System.out.println(people);
+        people.forEach(person -> System.out.println(person));
     }
 
     static void linkedHashSet() {
@@ -84,6 +87,7 @@ public class CollectionsImplemented {
         System.out.println(people);
         System.out.println(people);
         System.out.println(people); // Immer gleiche Reihenfolge
+        people.forEach(person -> System.out.println(person));
     }
 
     static void treeSet() {
@@ -96,6 +100,7 @@ public class CollectionsImplemented {
         people.add(peter);
         System.out.println(people.size());
         System.out.println(people); // -> Sortiert
+        people.forEach(person -> System.out.println(person));
     }
 
     static void queue() {
@@ -107,6 +112,7 @@ public class CollectionsImplemented {
         System.out.println(queue.peek());
         System.out.println(queue.poll());
         System.out.println(queue);
+        queue.forEach(person -> System.out.println(person));
     }
 
     static void hashMap() {
@@ -130,6 +136,12 @@ public class CollectionsImplemented {
         System.out.println(peopleMap.entrySet());
         System.out.println(peopleMap.keySet());
         System.out.println(peopleMap.values());
+        peopleMap.forEach((category, people) -> {
+            System.out.println(category + ":");
+            people.forEach(person -> {
+                System.out.println(person.getFirstName() + " " + person.getLastName());
+            });
+        });
     }
 
     static void linkedHashMap() {
@@ -143,6 +155,7 @@ public class CollectionsImplemented {
         peopleMap.get(0);
         peopleMap.get(3);
         System.out.println(peopleMap);
+        peopleMap.forEach((index, person) -> System.out.println(index + ": " + person.getFirstName() + " " + person.getLastName()));
     }
 
     static void treeMap() {
@@ -153,6 +166,7 @@ public class CollectionsImplemented {
         peopleMap.put(4, new Person("Hans", "Muster"));
         peopleMap.put(3, new Person("Vorname", "Nachname"));
         System.out.println(peopleMap); // nach keys sortiert
+        peopleMap.forEach((index, person) -> System.out.println(index + ": " + person.getFirstName() + " " + person.getLastName()));
     }
 
 }
