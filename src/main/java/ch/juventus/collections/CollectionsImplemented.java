@@ -1,7 +1,6 @@
 package ch.juventus.collections;
 
 import ch.juventus.object.Person;
-import org.omg.CORBA.PERSIST_STORE;
 
 import java.util.*;
 
