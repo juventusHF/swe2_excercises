@@ -8,11 +8,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Recursion start: " + System.currentTimeMillis());
         int fib1 = recursion(40);
-        System.out.println("Recursion end ("+fib1+"): " + System.currentTimeMillis());
+        System.out.println("Recursion end (result was "+fib1+"): " + System.currentTimeMillis());
 
         System.out.println("Iteration start: " + System.currentTimeMillis());
         int fib2 = iteration(40);
-        System.out.println("Iteration end ("+fib2+"): " + System.currentTimeMillis());
+        System.out.println("Iteration end (result was "+fib2+"): " + System.currentTimeMillis());
 
         List<String> testInput = getPalindromeTestInput();
         testInput.stream()
