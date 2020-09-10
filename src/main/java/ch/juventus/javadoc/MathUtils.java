@@ -20,7 +20,7 @@ public class MathUtils {
      * @return The sum of all the given numbers
      */
     public double addition(List<Double> numbers) {
-        double sum = 0d;
+        double sum = 0;
         for(Double num : numbers) {
             sum += num;
         }
