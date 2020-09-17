@@ -45,6 +45,7 @@ public class Collections {
         // TODO: Gib die Länge des Sets aus (doppelte Personen?)
         // TODO: Prüfe, ob ein gewisses Element im Set existiert
         // TODO: Lösche ein bestimmtes Element aus dem Set
+        // TODO: Gib das gesamte Set mehrmals auf der Konsole aus. Wie ist die Reihenfolge der Elemente?
     }
 
     static void linkedHashSet() {

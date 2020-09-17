@@ -1,6 +1,7 @@
 package ch.juventus.javadoc;
 
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,7 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MathUtilsTest {
 
-    private final MathUtils mathUtils = new MathUtils();
+    private MathUtils mathUtils;
+
+    @BeforeEach
+    public void setup() {
+        mathUtils = new MathUtils();
+    }
 
     @Test
     public void fivePlusFiveShouldEqualsTen() {
