@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class MyFxApp extends Application {
 
-    private final String STYLESHEET_PATH = "ch/juventus/fx/styles/stylesheet.css";
+    private final String STYLESHEET_PATH = "file:///C:/Users/lkrue/Dev/Workspaces/Juventus/2020HS/SWE2/swe2_excercises/src/main/java/ch/juventus/fx/styles/stylesheet.css";
     private Scene scene;
     private GridPane root;
     private ColumnConstraints col0, col1, col2;
@@ -96,7 +96,7 @@ public class MyFxApp extends Application {
     }
 
     private void handleSubmit() {
-        actionOutput.setText("Sign in button pressed, name is " + nameInput.getText());
+        actionOutput.setText("Submit button pressed, name is " + nameInput.getText());
     }
 
     private void addActionOutput() {

@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class StageManager {
 
-    private final String PROJECT_PATH = "file:///C:/Users/Linda/Dev/Workspaces/2020/java_projects/swe2_exercises/";
+    private final String PROJECT_PATH = "file:///C:/Users/lkrue/Dev/Workspaces/Juventus/2020HS/SWE2/swe2_excercises/";
     private final String LAYOUT_PATH_FIRST = "src/main/java/ch/juventus/fx/multiplestages/first/firstLayout.fxml";
     private final String LAYOUT_PATH_SECOND = "src/main/java/ch/juventus/fx/multiplestages/second/secondLayout.fxml";
 

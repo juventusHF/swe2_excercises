@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class MyFxApp extends Application {
 
-    public static final String PROJECT_PATH = "file:///C:/Users/Linda/Dev/Workspaces/2020/java_projects/swe2_exercises/";
+    public static final String PROJECT_PATH = "file:///C:/Users/lkrue/Dev/Workspaces/Juventus/2020HS/SWE2/swe2_excercises/";
     public static final String LAYOUT_PATH = "src/main/java/ch/juventus/fx/option1/myLayout.fxml";
 
     @Override
