@@ -7,11 +7,7 @@ import java.util.List;
 
 public class FileExercises {
 
-    private static final String BASE_PATH = "C:\\Users\\Linda\\Dev\\";
-    private static final String FOLDER_NAME = "FileExercise\\";
-    private static final String FILE_NAME = "myNewFile.txt";
-
-    public void run() {
+    public static void main(String[] args) {
         createDirectory();
         createTextFile();
         renameTextFile();
@@ -19,16 +15,16 @@ public class FileExercises {
         deleteAll();
     }
 
-    private void createDirectory() {
-        File file = new File(BASE_PATH + FOLDER_NAME);
-        boolean created = file.mkdirs();
+    private static void createDirectory() {
+        File file = new File("src/main/resources/newDir");
+        boolean created = file.mkdir();
         if(created) {
             System.out.println("New directory created");
         }
     }
 
-    private void createTextFile() {
-        File file = new File(BASE_PATH + FOLDER_NAME + FILE_NAME);
+    private static void createTextFile() {
+        File file = new File("src/main/resources/newDir/newFile.txt");
         boolean created = false;
         try {
             created = file.createNewFile();
@@ -40,9 +36,9 @@ public class FileExercises {
         }
     }
 
-    private void renameTextFile() {
-        File file = new File(BASE_PATH + FOLDER_NAME + FILE_NAME);
-        File renamed = new File(BASE_PATH + FOLDER_NAME + "\\myRenamedFile.txt");
+    private static void renameTextFile() {
+        File file = new File("src/main/resources/newDir/newFile.txt");
+        File renamed = new File("src/main/resources/newDir/renamedFile.txt");
         boolean success = file.renameTo(renamed);
         if(success) {
             System.out.println("Successfully renamed file");
@@ -52,20 +48,20 @@ public class FileExercises {
         }
     }
 
-    private void listContent() {
-        File file = new File(BASE_PATH + FOLDER_NAME);
+    private static void listContent() {
+        File file = new File("src/main/resources/newDir");
         List<String> filenames = Arrays.asList(file.list());
         System.out.println("Content:");
         filenames.forEach(name -> System.out.println(name));
     }
 
-    private void deleteAll() {
-        File dir = new File(BASE_PATH + FOLDER_NAME);
+    private static void deleteAll() {
+        File dir = new File("src/main/resources/newDir");
         deleteDir(dir);
         System.out.println("All deleted!");
     }
 
-    private boolean deleteDir(File dir){
+    private static boolean deleteDir(File dir){
         File[] files = dir.listFiles();
         if(files != null){
             for(File file : files){
