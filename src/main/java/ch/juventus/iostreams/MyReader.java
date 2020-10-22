@@ -23,10 +23,10 @@ public class MyReader {
         reader.close();
     }
 
-    public void readAtPosition(String filePath) throws IOException {
+    public void readAtPosition(String filePath, int position) throws IOException {
         RandomAccessFile file = new RandomAccessFile(filePath, "r");
 
-        file.seek(3);
+        file.seek(position);
 
         int data = file.read();
         while(data != -1){

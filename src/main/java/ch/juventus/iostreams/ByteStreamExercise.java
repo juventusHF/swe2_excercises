@@ -1,8 +1,6 @@
 package ch.juventus.iostreams;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class ByteStreamExercise {
 
@@ -10,9 +8,9 @@ public class ByteStreamExercise {
         copy("src/main/resources/hello.txt", "src/main/resources/new.txt");
     }
 
-    private static void copy(String from, String to) throws IOException {
-        FileInputStream inputStream = new FileInputStream(from);
-        FileOutputStream outputStream = new FileOutputStream(to);
+    private static void copy(String source, String destination) throws IOException {
+        InputStream inputStream = new FileInputStream(source);
+        OutputStream outputStream = new FileOutputStream(destination);
 
         int b;
         while ((b = inputStream.read()) != -1 ) {

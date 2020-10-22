@@ -21,10 +21,10 @@ public class MyWriter {
         writer.close();
     }
 
-    public void writeAtPosition(String filePath) throws IOException {
+    public void writeAtPosition(String filePath, int position) throws IOException {
         RandomAccessFile file = new RandomAccessFile(filePath, "rw");
 
-        file.seek(3);
+        file.seek(position);
         file.write("-huhu-".getBytes());
 
         file.close();
