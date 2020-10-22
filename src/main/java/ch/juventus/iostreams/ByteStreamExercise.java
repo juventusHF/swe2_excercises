@@ -7,7 +7,6 @@ import java.io.IOException;
 public class ByteStreamExercise {
 
     public static void main(String[] args) throws IOException {
-
         copy("src/main/resources/hello.txt", "src/main/resources/new.txt");
     }
 
@@ -20,5 +19,6 @@ public class ByteStreamExercise {
             outputStream.write(b);
         }
         inputStream.close();
+        outputStream.close();
     }
 }
