@@ -6,13 +6,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Recursion start: " + System.currentTimeMillis());
+        long recStart = System.currentTimeMillis();
+        System.out.println("Recursion start: " + recStart);
         int fib1 = recursion(40);
-        System.out.println("Recursion end (result was "+fib1+"): " + System.currentTimeMillis());
+        long recEnd = System.currentTimeMillis();
+        System.out.println("Recursion end (result was "+fib1+"): " + recEnd + " -> took " + (recEnd - recStart) + "ms");
 
-        System.out.println("Iteration start: " + System.currentTimeMillis());
+        long itrStart = System.currentTimeMillis();
+        System.out.println("Iteration start: " + itrStart);
         int fib2 = iteration(40);
-        System.out.println("Iteration end (result was "+fib2+"): " + System.currentTimeMillis());
+        long itrEnd = System.currentTimeMillis();
+        System.out.println("Iteration end (result was "+fib2+"): " + itrEnd + " -> took " + (itrEnd - itrStart) + "ms");
 
         List<String> testInput = getPalindromeTestInput();
         testInput.stream()
