@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class StreamExamples {
 
     public static void main(String[] args) {
-//        exerciseOne();
+        exerciseOne();
         exerciseTwo();
     }
 
@@ -41,7 +41,8 @@ public class StreamExamples {
 
         boolean result = people.stream()
                 .filter(person -> !person.getName().toLowerCase().startsWith("a"))
-                .allMatch(person -> person.getAge() > 18);
+                .map(person -> person.getAge())
+                .allMatch(age -> age > 18);
 
         System.out.println(result);
 

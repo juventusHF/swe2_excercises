@@ -23,7 +23,7 @@ public class StreamExamples {
         numberLists.add(numbers3);
 
         List<Integer> result = numberLists.stream()
-                .flatMap(numberList -> numberList.stream())
+                .flatMap(List::stream)
                 .map(number -> number*2)
                 .distinct()
                 .sorted()
@@ -41,7 +41,8 @@ public class StreamExamples {
 
         boolean result = people.stream()
                 .filter(person -> !person.getName().toLowerCase().startsWith("a"))
-                .allMatch(person -> person.getAge() > 18);
+                .map(Person::getAge)
+                .allMatch(age -> age > 18);
 
         System.out.println(result);
 
