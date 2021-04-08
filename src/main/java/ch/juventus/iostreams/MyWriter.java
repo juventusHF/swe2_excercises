@@ -30,24 +30,6 @@ public class MyWriter {
         file.close();
     }
 
-    public void writeJson(String filePath) throws IOException {
-        JSONObject obj = new JSONObject();
-        obj.put("name", "linda");
-        obj.put("age", 27);
-
-        JSONArray list = new JSONArray();
-        list.add("msg 1");
-        list.add("msg 2");
-        list.add("msg 3");
-
-        obj.put("messages", list);
-
-        Writer writer = new FileWriter(filePath);
-        writer.write(obj.toJSONString());
-
-        writer.close();
-    }
-
     public void serializeObject(Person person, String filePath) throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath));
 

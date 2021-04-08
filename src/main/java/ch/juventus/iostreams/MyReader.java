@@ -38,23 +38,6 @@ public class MyReader {
         file.close();
     }
 
-    public void readJson(String filePath) throws IOException, ParseException {
-        Reader reader = new FileReader(filePath);
-
-        JSONParser parser = new JSONParser();
-        JSONObject jsonObject = (JSONObject) parser.parse(reader);
-        System.out.println(jsonObject);
-
-        String name = (String) jsonObject.get("name");
-        System.out.println(name);
-
-        long age = (Long) jsonObject.get("age");
-        System.out.println(age);
-
-        JSONArray messages = (JSONArray) jsonObject.get("messages");
-        messages.forEach(msg -> System.out.println(msg));
-    }
-
     public void deserializeObject(String filePath) throws IOException, ClassNotFoundException {
         ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath));
 
