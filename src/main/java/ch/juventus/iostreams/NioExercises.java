@@ -1,20 +1,20 @@
 package ch.juventus.iostreams;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import java.nio.file.StandardOpenOption;
+import java.nio.file.DirectoryStream;
 
 public class NioExercises {
 
     public static void main(String[] args) throws IOException {
         createDirectory();
         createTextFile();
+        writeIntoFile();
         renameTextFile();
+        readFromFile();
         listContent();
         deleteAll();
     }
@@ -35,19 +35,33 @@ public class NioExercises {
         }
     }
 
+    private static void writeIntoFile() throws IOException {
+        Path file = Paths.get("src/main/resources/newDir/newFile.txt");
+        Files.writeString(file, "hello world");
+        Files.writeString(file, "--append this text--", StandardOpenOption.APPEND);
+//        Files.writeString(file, "overwritten");
+    }
+
     private static void renameTextFile() throws IOException {
         Path file = Paths.get("src/main/resources/newDir/newFile.txt");
         Path renamed = Paths.get("src/main/resources/newDir/renamedFile.txt");
         Files.move(file, renamed);
         if(Files.exists(renamed)) {
             System.out.println("Renamed file exists");
+
         }
+    }
+
+    private static void readFromFile() throws IOException {
+        Path renamed = Paths.get("src/main/resources/newDir/renamedFile.txt");
+        String content = Files.readString(renamed);
+        System.out.println("File content: " + content);
     }
 
     private static void listContent() throws IOException {
         Path dir = Paths.get("src/main/resources/newDir");
         DirectoryStream<Path> directoryStream = Files.newDirectoryStream(dir);
-        System.out.println("Content:");
+        System.out.println("Directory content:");
         for (Path path : directoryStream) {
             System.out.println(path.toString());
         }
