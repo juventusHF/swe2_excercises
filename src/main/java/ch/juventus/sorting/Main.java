@@ -18,7 +18,7 @@ public class Main {
         people.add(new Person("Peter", "Kuster"));
         people.add(new Person("Lisa", "Muster"));
 
-        Collections.sort(people, new NameComparator());
+        people.sort(new NameComparator());
 
         people.stream().forEach(person -> System.out.println(person));
     }
