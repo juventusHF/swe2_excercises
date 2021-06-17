@@ -2,6 +2,7 @@ package ch.juventus.sockets.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 public class Server {
 
@@ -9,7 +10,9 @@ public class Server {
         ServerSocket server = new ServerSocket(8888);
         System.out.println("SERVER listening");
         while(true){
-            new ClientHandler(server.accept()).start();
+            Socket client = server.accept();
+            ClientHandler clientHandler = new ClientHandler(client);
+            clientHandler.start();
         }
     }
 

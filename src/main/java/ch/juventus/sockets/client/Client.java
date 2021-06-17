@@ -9,9 +9,9 @@ import java.util.Set;
 
 public class Client {
 
-   private Request request;
+   private final Request request;
    private Socket client;
-    private ObjectInputStream in;
+   private ObjectInputStream in;
    private ObjectOutputStream out;
 
     public Client(Request request) {
@@ -42,7 +42,7 @@ public class Client {
     private void readResponse(ObjectInputStream in) throws IOException, ClassNotFoundException {
         System.out.println("CLIENT: read response from server:");
         if(Request.Command.GET_BY_NAME.equals(request.getCommand())) {
-            System.out.println((Set<Person>)in.readObject());
+            System.out.println(in.readObject());
         } else {
             System.out.println((String)in.readObject());
         }

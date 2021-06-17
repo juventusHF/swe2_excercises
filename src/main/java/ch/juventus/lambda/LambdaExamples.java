@@ -23,9 +23,9 @@ public class LambdaExamples {
         MathOperation division = (a, b) -> a / b;
 
         System.out.println(executeMathOperation(2, 2, addition));
-        System.out.println(executeMathOperation(2, 2, subtraction));
-        System.out.println(executeMathOperation(2, 2, multiplication));
-        System.out.println(executeMathOperation(2, 2, division));
+        System.out.println(executeMathOperation(3, 3, subtraction));
+        System.out.println(executeMathOperation(4, 4, multiplication));
+        System.out.println(executeMathOperation(5, 5, division));
     }
 
     private static int executeMathOperation(int a, int b, MathOperation mathOperation) {
