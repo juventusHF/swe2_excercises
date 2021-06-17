@@ -1,11 +1,11 @@
 package ch.juventus.sockets.client;
 
-import ch.juventus.sockets.Person;
 import ch.juventus.sockets.Request;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Set;
 
 public class Client {
 

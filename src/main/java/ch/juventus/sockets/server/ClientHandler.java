@@ -12,8 +12,8 @@ import java.util.Set;
 
 public class ClientHandler extends Thread {
 
-    private Socket client;
-    private PersonStore store;
+    private final Socket client;
+    private final PersonStore store;
     private ObjectInputStream in;
     private ObjectOutputStream out;
 
